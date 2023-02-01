@@ -61,7 +61,7 @@ export default function Home() {
                         justifyContent: "center",
                         alignItems: 'center',
                     }}>
-                        <Image src='/sew-posh2.png' width={logoSize().width} height={logoSize().height}/>
+                        <Image src='/sew-posh2.png' width={logoSize().width} height={logoSize().height} alt="Sew Posh Logo"/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={10} lg={9} xl={8} sx={{
                         display: "flex",
@@ -149,6 +149,7 @@ export default function Home() {
                                     sx={{ height: 270, }}
                                     image={data.img}
                                     title={data.title}
+                                    alt='Sew Posh Info'
                                 />
                                 <CardContent sx={{
                                     backgroundColor: 'black', 

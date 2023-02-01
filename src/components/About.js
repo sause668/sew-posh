@@ -66,7 +66,13 @@ export default function About() {
                         borderRadius: '5px',
                         marginTop: '10px',
                     }}>
-                        <Image src='/about/ari.jpg' width={logoSize().width} height={logoSize().height} style={{borderRadius: '10px'}} />
+                        <Image 
+                            src='/about/ari.jpg' 
+                            width={logoSize().width} 
+                            height={logoSize().height} 
+                            alt="Gallery Zoom Pic"
+                            style={{borderRadius: '10px'}} 
+                        />
                     </Grid> 
                     {/* Profile Info */}
                     <Grid item xs={11} sm={10} md={6} sx={{

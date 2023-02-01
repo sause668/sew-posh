@@ -147,11 +147,18 @@ export default function Gallary() {
                         }}>
                             <ArrowBackIosIcon/>
                         </Button>
-                        <Carousel prevImg={prevImg} nextImg={nextImg} transform={`translateX(${carouselPos}%)`} >
+                        <Carousel prevImg={prevImg} nextImg={nextImg} transform={`translateX(${carouselPos}%)`}>
                             {gallaryData.map((data)=>(
                                 <CarouselItem key={data.id}  >
                                     <div sx={{position: 'relative'}} >
-                                      <Image src={data.img} onClick={()=>openZD(data.id)} width={carouselSize()} height={carouselSize()} style={{borderRadius: '10px'}}/>
+                                        <Image 
+                                            src={data.img} 
+                                            onClick={()=>openZD(data.id)} 
+                                            width={carouselSize()} 
+                                            height={carouselSize()} 
+                                            style={{borderRadius: '10px'}} 
+                                            alt="Gallery Pic"
+                                        />
                                     </div>
                                     <Dialog 
                                         onClose={closeZD} 
@@ -159,7 +166,18 @@ export default function Gallary() {
                                         open={(openZ==data.id)} 
                                         fullScreen 
                                     >
-                                        <Image src={data.imgZ} width={zoomSize(data.height,data.width)} height={zoomSize(data.height,data.width)*data.height/data.width} style={{position: 'relative', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',}}/>
+                                        <Image 
+                                            src={data.imgZ} 
+                                            width={zoomSize(data.height,data.width)} 
+                                            height={zoomSize(data.height,data.width)*data.height/data.width} 
+                                            alt="Gallery Zoom Pic"
+                                            style={{
+                                                position: 'relative', 
+                                                top: '50%', 
+                                                left: '50%', 
+                                                transform: 'translate(-50%, -50%)',
+                                            }}
+                                        />
                                     </Dialog>
                                 </CarouselItem>
                             ))}
