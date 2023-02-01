@@ -105,3 +105,59 @@ a {
     color-scheme: dark;
   }
 }
+
+/* modak-regular - latin */
+@font-face {
+  font-family: 'Modak';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/modak-v18-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/modak-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/modak-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/modak-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/modak-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/modak-v18-latin-regular.svg#Modak') format('svg'); /* Legacy iOS */
+}
+
+/* sofia-sans-condensed-regular - latin */
+@font-face {
+  font-family: 'Sofia Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/sofia-sans-condensed-v1-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/sofia-sans-condensed-v1-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/sofia-sans-condensed-v1-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/sofia-sans-condensed-v1-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/sofia-sans-condensed-v1-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/sofia-sans-condensed-v1-latin-regular.svg#SofiaSansCondensed') format('svg'); /* Legacy iOS */
+}
+
+/* coiny-regular - latin */
+@font-face {
+  font-family: 'Coiny';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/coiny-v16-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/coiny-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/coiny-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/coiny-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/coiny-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/coiny-v16-latin-regular.svg#Coiny') format('svg'); /* Legacy iOS */
+}
+
+/* sofia-sans-regular - latin */
+@font-face {
+  font-family: 'Sofia Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/sofia-sans-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/sofia-sans-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/sofia-sans-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/sofia-sans-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/sofia-sans-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/sofia-sans-v10-latin-regular.svg#SofiaSans') format('svg'); /* Legacy iOS */
+}
