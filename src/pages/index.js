@@ -36,7 +36,7 @@ export default function Site() {
           <Appointment/>
           <Contact/>
         </div>
-        <Script src="https://apps.elfsight.com/p/platform.js" />
+        {/* <Script src="https://apps.elfsight.com/p/platform.js" /> */}
     </>
   )
 }

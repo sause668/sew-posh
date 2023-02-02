@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, IconButton, Link, Tooltip, useMediaQuery } from "@mui/material";
+import { Button, ButtonGroup, IconButton, Link, Tooltip, useMediaQuery, Menu, MenuItem, MenuList } from "@mui/material";
 import { useState, useEffect } from "react";
 import HomeIcon from '@mui/icons-material/Home';
 import CollectionsIcon from '@mui/icons-material/Collections';
@@ -9,25 +9,27 @@ import CallIcon from '@mui/icons-material/Call';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MenuIcon from '@mui/icons-material/Menu';
+import Home from "./Home";
 
 export default function Nav() {
-    const mobile = useMediaQuery('(min-width:700px)');
+    const mobile = useMediaQuery('(min-width:1000px)');
     const [section, setSection] = useState('Home');
     const [menu, setMenu] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
 
     function scroll(id) {
         var elm = document.getElementById(id);
         elm.scrollIntoView({behavior: "smooth"}); 
     }
-
-    function toggleMenu() {
-        if (menu) {
-            setMenu(false);
-        }else {
-            setMenu(true);
-        }
-    }
     
+    const handleMenuClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleMenuClose = () => {
+      setAnchorEl(null);
+    };
+
     useEffect(() => {
         const handleScroll = (event) => {
             var home = document.getElementById('Home');
@@ -78,15 +80,57 @@ export default function Nav() {
                         backgroundColor: 'black',
                         borderRadius: '10px'
                 }}/>
-                <IconButton color="primary" size="large" onClick={toggleMenu} >
+                <IconButton color="primary" size="large" onClick={handleMenuClick} >
                     <MenuIcon fontSize="large"/>
                 </IconButton>
             </ButtonGroup>
+            {/* Mobile Menu */}
+            <Menu
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleMenuClose}
+                transformOrigin={{ horizontal: 'left', vertical: 'top' }}
+                anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+                PaperProps={{
+                    elevation: 0,
+                    sx: {
+                        backgroundColor: 'black',
+                        color: 'primary.main',
+                        borderRadius: '7px',
+                    }
+                  }}
+            >
+                <MenuItem onClick={()=>scroll('Home')} selected={(section=="Home") ? true : false}>
+                    <HomeIcon/>
+                    Profile
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('Gallary')} selected={(section=="Gallary") ? true : false}>
+                    <CollectionsIcon/>
+                    Gallary
+                </MenuItem>
+                <MenuItem onClick={()=>scrollTo('Reviews')} selected={(section=="Reviews") ? true : false}>
+                    <ReviewsIcon/>
+                    Reviews
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('About')} selected={(section=="About") ? true : false}>
+                    <InfoIcon/>
+                    About
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('Appointment')} selected={(section=="Appointment") ? true : false}>
+                    <CalendarMonthIcon/>
+                    Appointment
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('Contact')} selected={(section=="Contact") ? true : false}>
+                    <CallIcon/>
+                    Contact
+                </MenuItem>
+            </Menu>
             {/* Mobile Links */}
             <ButtonGroup sx={{
                     position: 'fixed',
-                    right: menu ? '0px':'-300px',
-                    transition: 'right 0.3s',
+                    right: '0px',
+                    // right: menu ? '0px':'-300px',
+                    // transition: 'right 0.3s',
                     zIndex: '98',
             }}>
                 <div style={{
@@ -106,73 +150,6 @@ export default function Nav() {
                         <FacebookIcon fontSize="large"/>
                     </Link>
                 </IconButton>
-            </ButtonGroup>
-            {/* Mobile Menu */}
-            <ButtonGroup 
-                orientation="vertical" 
-                sx={{
-                    position: 'fixed',
-                    top: menu ? '59px':'-1000px',
-                    transition: 'top 0.3s',
-                    zIndex: '97',
-                }} >
-                    <div style={{
-                        position: 'absolute',
-                        height: '100%',
-                        width: '100%',
-                        backgroundColor: 'black',
-                        opacity: '.8',
-                        borderRadius: '7px'
-                     }}/>
-                
-                <Button 
-                    onClick={()=>scroll('Home')} 
-                    variant={(section=="Home") ? 'contained' : 'outlined'}
-                >
-                    <Tooltip placement="right" title='Home'>
-                       <HomeIcon/> 
-                    </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Gallary')} 
-                    variant={(section=="Gallary") ? 'contained' : 'outlined'}
-                >
-                    <Tooltip placement="right" title='Gallary'>
-                        <CollectionsIcon/>
-                    </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Reviews')}
-                    variant={(section=="Reviews") ? 'contained' : 'outlined'}
-                >
-                    <Tooltip placement="right" title='Reviews'>
-                        <ReviewsIcon/>
-                    </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('About')}
-                    variant={(section=="About") ? 'contained' : 'outlined'}
-                >
-                    <Tooltip placement="right" title='About'>
-                        <InfoIcon/>
-                    </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Appointment')}
-                    variant={(section=="Appointment") ? 'contained' : 'outlined'}
-                >
-                    <Tooltip placement="right" title='Appointment'>
-                        <CalendarMonthIcon/>
-                    </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Contact')}
-                    variant={(section=="Contact") ? 'contained' : 'outlined'}
-                >
-                    <Tooltip placement="right" title='Contact'>
-                        <CallIcon/>
-                    </Tooltip>
-                </Button>
             </ButtonGroup>
             </div>) : (<div>
             {/* Links */}
@@ -203,15 +180,17 @@ export default function Nav() {
                 </IconButton>
             </ButtonGroup>
             {/* Menu */}
-            <ButtonGroup 
-                orientation="vertical" 
+            <MenuList 
                 sx={{
                     position: 'fixed',
                     top: '50%',
                     transform: 'translate(0%, -50%)',
+                    color: 'primary.main',
+                    borderRadius: '7px',
                     zIndex: '99',
-                }} >
-                    <div style={{
+                }}
+            >
+                <div style={{
                         position: 'absolute',
                         height: '100%',
                         width: '100%',
@@ -219,55 +198,37 @@ export default function Nav() {
                         opacity: '.8',
                         borderRadius: '7px'
                      }}/>
-                <Button 
-                    onClick={()=>scroll('Home')} 
-                    variant={(section=="Home") ? 'contained' : 'outlined'}
-                >
+                <MenuItem onClick={()=>scroll('Home')} selected={(section=="Home") ? true : false}>
                     <Tooltip placement="right" title='Home'>
                        <HomeIcon/> 
                     </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Gallary')} 
-                    variant={(section=="Gallary") ? 'contained' : 'outlined'}
-                >
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('Gallary')} selected={(section=="Gallary") ? true : false}>
                     <Tooltip placement="right" title='Gallary'>
                         <CollectionsIcon/>
                     </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Reviews')}
-                    variant={(section=="Reviews") ? 'contained' : 'outlined'}
-                >
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('Reviews')}selected={(section=="Reviews") ? true : false}>
                     <Tooltip placement="right" title='Reviews'>
                         <ReviewsIcon/>
                     </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('About')}
-                    variant={(section=="About") ? 'contained' : 'outlined'}
-                >
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('About')}selected={(section=="About") ? true : false}>
                     <Tooltip placement="right" title='About'>
                         <InfoIcon/>
                     </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Appointment')}
-                    variant={(section=="Appointment") ? 'contained' : 'outlined'}
-                >
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('Appointment')}selected={(section=="Appointment") ? true : false}>
                     <Tooltip placement="right" title='Appointment'>
                         <CalendarMonthIcon/>
                     </Tooltip>
-                </Button>
-                <Button 
-                    onClick={()=>scroll('Contact')}
-                    variant={(section=="Contact") ? 'contained' : 'outlined'}
-                >
+                </MenuItem>
+                <MenuItem onClick={()=>scroll('Contact')}selected={(section=="Contact") ? true : false}>
                     <Tooltip placement="right" title='Contact'>
                         <CallIcon/>
                     </Tooltip>
-                </Button>
-            </ButtonGroup>
+                </MenuItem>
+            </MenuList>
             </div>)}
         </div>
         //</Container>

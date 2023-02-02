@@ -55,7 +55,18 @@ let theme = createTheme({
           backgroundColor: "#FF00AA"
         }
       }
-    }
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected": { // <-- mixing the two classes
+            color: "white",
+            backgroundColor: "#FF00AA",
+            borderRadius: '7px'
+          }
+        }
+      }
+    },
   },
 });
 
