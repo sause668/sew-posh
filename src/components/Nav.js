@@ -108,7 +108,7 @@ export default function Nav() {
                     <CollectionsIcon/>
                     Gallary
                 </MenuItem>
-                <MenuItem onClick={()=>scrollTo('Reviews')} selected={(section=="Reviews") ? true : false}>
+                <MenuItem onClick={()=>scroll('Reviews')} selected={(section=="Reviews") ? true : false}>
                     <ReviewsIcon/>
                     Reviews
                 </MenuItem>
