@@ -88,7 +88,7 @@ export default function About() {
                         <br/>
                         <Typography variant="h6" color="white" align="center" >
                             <div>
-                                SEAMSTRESS FROM THE AGE OF 3, ARI HAS TURNED HER TALENT INTO A SERVICE THAT DOESN'T START WITH JUST A QUOTE.
+                                SEAMSTRESS FROM THE AGE OF 3, ARI HAS TURNED HER TALENT INTO A SERVICE THAT DOES NOT START WITH JUST A QUOTE.
                                 <br/>
                                 <br/>
                                 THE SEW POSH EXPERIENCE INVOLVES YOU EVERY STEP OF THE WAY FROM COLOR CHOICES, TO FABRIC CHOICES, YOU WILL NEVER BE LEFT IN THE DARK.
