@@ -1,9 +1,9 @@
-
+var nodemailer = require('nodemailer');
 
 export default async function handler(req, res) {
     
     const ap = JSON.parse(req.body);
-    var nodemailer = require('nodemailer');
+    
 
     //Set Email Connection
     var transporter = nodemailer.createTransport({
@@ -26,15 +26,19 @@ export default async function handler(req, res) {
 
     //Send Email
     var status = true;
-    transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-        console.log(error);
-        status = false;
-    } else {
-        console.log('Email sent: ' + info.response);
-    }
-    });
 
+    await new Promise((res,rej) => {
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+                rej(error);
+                status = false;
+            } else {
+                console.log('Email sent: ' + info.response);
+                res(info);
+            }
+        });
+    })
     //Send Response
     res.status(200).json({status: status});
 }
