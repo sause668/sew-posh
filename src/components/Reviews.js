@@ -45,7 +45,7 @@ export default function Reviews() {
                         justifyContent: "center",
                         alignItems: 'center',
                     }}>
-                        {/* <div class="elfsight-app-8cbbf38f-4d1f-4d3a-b14b-ae14a9dba70f"></div> */}
+                        <div class="elfsight-app-8cbbf38f-4d1f-4d3a-b14b-ae14a9dba70f"></div>
                     </Grid>
                 </Grid>
             </Container>

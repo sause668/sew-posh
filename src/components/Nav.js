@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, IconButton, Link, Tooltip, useMediaQuery, Menu, MenuItem, MenuList } from "@mui/material";
+import { ButtonGroup, IconButton, Tooltip, useMediaQuery, Menu, MenuItem, MenuList } from "@mui/material";
 import { useState, useEffect } from "react";
 import HomeIcon from '@mui/icons-material/Home';
 import CollectionsIcon from '@mui/icons-material/Collections';
@@ -9,12 +9,10 @@ import CallIcon from '@mui/icons-material/Call';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MenuIcon from '@mui/icons-material/Menu';
-import Home from "./Home";
 
 export default function Nav() {
     const mobile = useMediaQuery('(min-width:1000px)');
     const [section, setSection] = useState('Home');
-    const [menu, setMenu] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -140,15 +138,11 @@ export default function Nav() {
                         backgroundColor: 'black',
                         borderRadius: '10px'
                 }}/>
-                <IconButton color="primary"  >
-                    <Link href="https://www.instagram.com/sewposhdesignandupholstery">
-                        <InstagramIcon fontSize="large"/>
-                    </Link>
+                <IconButton color="primary" href="https://www.instagram.com/sewposhdesignandupholstery" >
+                    <InstagramIcon fontSize="large"/>
                 </IconButton>
-                <IconButton color="primary">
-                    <Link href="https://www.facebook.com/sewposhdesignandupholstery">
-                        <FacebookIcon fontSize="large"/>
-                    </Link>
+                <IconButton color="primary" href="https://www.facebook.com/sewposhdesignandupholstery">
+                    <FacebookIcon fontSize="large"/>
                 </IconButton>
             </ButtonGroup>
             </div>) : (<div>
@@ -168,15 +162,11 @@ export default function Nav() {
                         opacity: '.8',
                         borderRadius: '10px'
                 }}/>
-                <IconButton color="primary"  >
-                    <Link href="https://www.instagram.com/sewposhdesignandupholstery">
-                        <InstagramIcon fontSize="large"/>
-                    </Link>
+                <IconButton color="primary" href="https://www.instagram.com/sewposhdesignandupholstery" >
+                    <InstagramIcon fontSize="large"/>
                 </IconButton>
-                <IconButton color="primary">
-                    <Link href="https://www.facebook.com/sewposhdesignandupholstery">
-                        <FacebookIcon fontSize="large"/>
-                    </Link>
+                <IconButton color="primary" href="https://www.facebook.com/sewposhdesignandupholstery">
+                    <FacebookIcon fontSize="large"/>
                 </IconButton>
             </ButtonGroup>
             {/* Menu */}
@@ -200,7 +190,7 @@ export default function Nav() {
                      }}/>
                 <MenuItem onClick={()=>scroll('Home')} selected={(section=="Home") ? true : false}>
                     <Tooltip placement="right" title='Home'>
-                       <HomeIcon/> 
+                       <HomeIcon/>
                     </Tooltip>
                 </MenuItem>
                 <MenuItem onClick={()=>scroll('Gallary')} selected={(section=="Gallary") ? true : false}>
