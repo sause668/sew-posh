@@ -662,30 +662,30 @@ export const gallaryDir = [
         title: 'Chiropractor Chairs',
         dis: '',
         picDir: [
-            {
-                id: 11,
-                img: '/gallery/5-chiropractor-chair/1-1.jpg',
-                height: 1200,
-                width: 691,
-            },
-            {
-                id: 12,
-                img: '/gallery/5-chiropractor-chair/1-2.jpg',
-                height: 1200,
-                width: 747,
-            },
-            {
-                id: 13,
-                img: '/gallery/5-chiropractor-chair/1-3.jpg',
-                height: 1200,
-                width: 617,
-            },
-            {
-                id: 14,
-                img: '/gallery/5-chiropractor-chair/1-4.jpg',
-                height: 770,
-                width: 1500,
-            },
+            // {
+            //     id: 11,
+            //     img: '/gallery/5-chiropractor-chair/1-1.jpg',
+            //     height: 1200,
+            //     width: 691,
+            // },
+            // {
+            //     id: 12,
+            //     img: '/gallery/5-chiropractor-chair/1-2.jpg',
+            //     height: 1200,
+            //     width: 747,
+            // },
+            // {
+            //     id: 13,
+            //     img: '/gallery/5-chiropractor-chair/1-3.jpg',
+            //     height: 1200,
+            //     width: 617,
+            // },
+            // {
+            //     id: 14,
+            //     img: '/gallery/5-chiropractor-chair/1-4.jpg',
+            //     height: 770,
+            //     width: 1500,
+            // },
             {
                 id: 15,
                 img: '/gallery/5-chiropractor-chair/1-5.jpg',
@@ -814,42 +814,42 @@ export const gallaryDir = [
                 height: 641,
                 width: 481,
             },
-            {
-                id: 41,
-                img: '/gallery/7-cushions/4-1.jpg',
-                height: 957,
-                width: 1200,
-                before: {
-                    id: 41,
-                    img: '/gallery/7-cushions/4-1b.jpg',
-                    height: 1054,
-                    width: 1200,
-                }
-            },
-            {
-                id: 42,
-                img: '/gallery/7-cushions/4-2.jpg',
-                height: 859,
-                width: 1200,
-                before: {
-                    id: 42,
-                    img: '/gallery/7-cushions/4-2b.jpg',
-                    height: 1200,
-                    width: 972,
-                }
-            },
-            {
-                id: 43,
-                img: '/gallery/7-cushions/4-3.jpg',
-                height: 1200,
-                width: 900,
-            },
-            {
-                id: 44,
-                img: '/gallery/7-cushions/4-4.jpg',
-                height: 900,
-                width: 1200,
-            },
+            // {
+            //     id: 41,
+            //     img: '/gallery/7-cushions/4-1.jpg',
+            //     height: 957,
+            //     width: 1200,
+            //     before: {
+            //         id: 41,
+            //         img: '/gallery/7-cushions/4-1b.jpg',
+            //         height: 1054,
+            //         width: 1200,
+            //     }
+            // },
+            // {
+            //     id: 42,
+            //     img: '/gallery/7-cushions/4-2.jpg',
+            //     height: 859,
+            //     width: 1200,
+            //     before: {
+            //         id: 42,
+            //         img: '/gallery/7-cushions/4-2b.jpg',
+            //         height: 1200,
+            //         width: 972,
+            //     }
+            // },
+            // {
+            //     id: 43,
+            //     img: '/gallery/7-cushions/4-3.jpg',
+            //     height: 1200,
+            //     width: 900,
+            // },
+            // {
+            //     id: 44,
+            //     img: '/gallery/7-cushions/4-4.jpg',
+            //     height: 900,
+            //     width: 1200,
+            // },
             {
                 id: 51,
                 img: '/gallery/7-cushions/5-1.jpg',
@@ -1115,19 +1115,13 @@ export const gallaryDir = [
                 id: 11,
                 img: '/gallery/10-restorations/1-1.jpg',
                 height: 1000,
-                width: 751,
-                before: {
-                    id: 11,
-                    img: '/gallery/10-restorations/1-1b.jpg',
-                    height: 1000,
-                    width: 734,
-                }
+                width: 734,
             },
             {
                 id: 12,
                 img: '/gallery/10-restorations/1-2.jpg',
                 height: 1000,
-                width: 734,
+                width: 751,
             },
             {
                 id: 13,
@@ -1138,26 +1132,20 @@ export const gallaryDir = [
             {
                 id: 14,
                 img: '/gallery/10-restorations/1-4.jpg',
-                height: 865,
-                width: 1200,
-                before: {
-                    id: 14,
-                    img: '/gallery/10-restorations/1-4b.jpg',
-                    height: 865,
-                    width: 1200,
-                }
+                height: 1000,
+                width: 734,
             },
             {
                 id: 15,
                 img: '/gallery/10-restorations/1-5.jpg',
-                height: 1000,
-                width: 764,
+                height: 865,
+                width: 1200,
             },
             {
                 id: 16,
                 img: '/gallery/10-restorations/1-6.jpg',
-                height: 1000,
-                width: 764,
+                height: 865,
+                width: 1200,
             },
             {
                 id: 17,
@@ -1174,132 +1162,42 @@ export const gallaryDir = [
             {
                 id: 19,
                 img: '/gallery/10-restorations/1-9.jpg',
-                height: 1000,
-                width: 764,
+                height: 900,
+                width: 1200,
             },
             {
                 id: 110,
                 img: '/gallery/10-restorations/1-10.jpg',
                 height: 1000,
-                width: 764,
+                width: 705,
             },
             {
                 id: 111,
                 img: '/gallery/10-restorations/1-11.jpg',
                 height: 1000,
-                width: 764,
+                width: 796,
             },
             {
                 id: 112,
                 img: '/gallery/10-restorations/1-12.jpg',
                 height: 1000,
-                width: 764,
+                width: 862,
             },
             {
                 id: 113,
                 img: '/gallery/10-restorations/1-13.jpg',
-                height: 1000,
-                width: 764,
+                height: 1001,
+                width: 1201,
             },
             {
                 id: 114,
                 img: '/gallery/10-restorations/1-14.jpg',
-                height: 1000,
-                width: 764,
-            },
-            {
-                id: 115,
-                img: '/gallery/10-restorations/1-15.jpg',
-                height: 787,
-                width: 1200,
-            },
-            {
-                id: 116,
-                img: '/gallery/10-restorations/1-16.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 117,
-                img: '/gallery/10-restorations/1-17.jpg',
-                height: 701,
-                width: 1200,
-            },
-            {
-                id: 118,
-                img: '/gallery/10-restorations/1-18.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 119,
-                img: '/gallery/10-restorations/1-19.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 120,
-                img: '/gallery/10-restorations/1-20.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 121,
-                img: '/gallery/10-restorations/1-21.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 122,
-                img: '/gallery/10-restorations/1-22.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 123,
-                img: '/gallery/10-restorations/1-23.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 124,
-                img: '/gallery/10-restorations/1-24.jpg',
-                height: 900,
-                width: 1200,
-            },
-            {
-                id: 125,
-                img: '/gallery/10-restorations/1-25.jpg',
-                height: 1000,
-                width: 796,
-                before: {
-                    id: 125,
-                    img: '/gallery/10-restorations/1-25b.jpg',
-                    height: 1000,
-                    width: 705,
-                }
-            },
-            {
-                id: 126,
-                img: '/gallery/10-restorations/1-26.jpg',
-                height: 1001,
-                width: 1201,
-                before: {
-                    id: 126,
-                    img: '/gallery/10-restorations/1-26b.jpg',
-                    height: 1000,
-                    width: 862,
-                }
-            },
-            {
-                id: 127,
-                img: '/gallery/10-restorations/1-27.jpg',
                 height: 715,
                 width: 1200,
             },
             {
-                id: 128,
-                img: '/gallery/10-restorations/1-28.jpg',
+                id: 115,
+                img: '/gallery/10-restorations/1-15.jpg',
                 height: 1000,
                 width: 901,
             },
