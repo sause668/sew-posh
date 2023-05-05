@@ -22,7 +22,7 @@ export default function CategoriesLite({catIndex}) {
                     alignItems: 'center',
                 }}>
                     {gallaryDir.map((cat,index)=>(
-                        <React.Fragment>
+                        <React.Fragment key={`${cat.id}${index}`} >
                             {(index == catIndex) ? (<></>):(
                                 <Grid item xs={6} sm={4} key={cat.id} sx={{
                                     display: "flex",
