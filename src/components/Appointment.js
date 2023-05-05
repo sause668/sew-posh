@@ -205,10 +205,10 @@ export default function Appointment() {
                                             onChange={changeJobType}
                                             sx={{backgroundColor: 'white', borderRadius: '5px',}}
                                         >
-                                            <MenuItem value={'INDOOR UPLOSTERY CONSULTATION'}>INDOOR UPLOSTERY CONSULTATION</MenuItem>
-                                            <MenuItem value={'BOAT UPLOSTERY CONSULTATION'}>BOAT UPLOSTERY CONSULTATION</MenuItem>
+                                            <MenuItem value={'INDOOR UPHOLSTERY CONSULTATION'}>INDOOR UPHOLSTERY CONSULTATION</MenuItem>
+                                            <MenuItem value={'BOAT UPHOLSTERY CONSULTATION'}>BOAT UPHOLSTERY CONSULTATION</MenuItem>
                                             <MenuItem value={'CLOTHING CONSULTATION'}>CLOTHING CONSULTATION</MenuItem>
-                                            <MenuItem value={'OUTDOOR HOME UPLOSTERY CONSULTATION'}>OUTDOOR HOME UPLOSTERY CONSULTATION</MenuItem>
+                                            <MenuItem value={'OUTDOOR HOME UPHOLSTERY CONSULTATION'}>OUTDOOR HOME UPHOLSTERY CONSULTATION</MenuItem>
                                         </Select> 
                                     </FormControl>
                                 </Grid>

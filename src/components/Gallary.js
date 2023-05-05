@@ -1,17 +1,19 @@
-import { Button, Container, Grid, Typography, useMediaQuery, Dialog } from "@mui/material";
+import { Button, Container, Grid, Typography, useMediaQuery, Dialog, Card, CardMedia, } from "@mui/material";
 import Carousel, { CarouselItem } from "./Carousel";
 import Image from "next/image";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useState } from "react";
 
-export default function Gallary() {
+export default function Gallary({catPage}) {
     const caro = useMediaQuery('(min-width:1150px)');
     const mobile = useMediaQuery('(min-width:1000px)');
     const phone = useMediaQuery('(min-width:700px)');
     const phoneS = useMediaQuery('(min-width:450px)');
     const [carouselPos, setCarouselPos] = useState(-0);
     const [openZ, setopenZ] = useState(0);
+    const [openZB, setopenZB] = useState(0);
+    const picCaroCount = (catPage.picDir.length - 1) * 100
 
     function carouselSize() {
         let size = 600;
@@ -19,7 +21,7 @@ export default function Gallary() {
         if (!mobile) {
             if (!phone) {
                 if (!phoneS) {
-                    size = 300;
+                    size = 320;
                 }else {
                     size = 400;
                 }             
@@ -30,28 +32,60 @@ export default function Gallary() {
         return size;
     }
 
-    function zoomSize(height, width) {
+    function zoomSize2(heightIn, widthIn) {
         
-        let orientation = (height>width);
-        let size = orientation ? 320:1100;
+        let orientation = (heightIn > widthIn);
+        let height = 0;
+        let width = 0;
 
         if (!mobile) {
             if (!phone) {
                 if (!phoneS) {
-                    size = orientation ? 300:400;
+                    if (orientation) {
+                        //255
+                        height = 400;
+                        width = height * widthIn/heightIn;
+                    } else {
+                        //400
+                        width = 350;
+                        height = width * heightIn/widthIn;
+                    }
                 }else {
-                    size = orientation ? 300:500;
+                    if (orientation) {
+                        //320
+                        height = 455;
+                        width = height * widthIn/heightIn;
+                    } else {
+                        //500
+                        width = 450;
+                        height = width * heightIn/widthIn;
+                    }
                 }             
             }else {
-                size = orientation ? 300:800;
+                if (orientation) {
+                    //510
+                    height = 510;
+                    width = height * widthIn/heightIn;
+                } else {
+                    width = 800;
+                    height = width * heightIn/widthIn;
+                }
+            }
+        } else {
+            if (orientation) {
+                height = 700;
+                width = height * widthIn/heightIn;
+            } else {
+                width = 1100;
+                height = width * heightIn/widthIn;
             }
         }
-        return size;
+        return {height: height, width: width};
     }
 
     function nextImg() {
         let pos = carouselPos-100;
-        if (pos<-1600){
+        if (pos < -picCaroCount){
             pos = 0;
         }
         setCarouselPos(pos);
@@ -59,8 +93,8 @@ export default function Gallary() {
 
     function prevImg() {
         let pos = carouselPos+100;
-        if (pos>0){
-            pos = -1600;
+        if (pos > 0){
+            pos = -picCaroCount;
         }
         setCarouselPos(pos);
     }
@@ -73,26 +107,13 @@ export default function Gallary() {
         setopenZ(0);
     }
 
-    let gallaryData = [
-        {id: 1, img: '/gallary/new/gallary1.jpg', imgZ: '/gallary/gallary1.jpg', height: 1183, width: 2500},
-        {id: 2, img: '/gallary/new/gallary2.jpg', imgZ: '/gallary/gallary2.jpg', height: 1057, width: 500},
-        {id: 3, img: '/gallary/new/gallary3.jpg', imgZ: '/gallary/gallary3.jpg', height: 893, width: 1500},
-        {id: 4, img: '/gallary/new/gallary4.jpg', imgZ: '/gallary/gallary4.jpg', height: 1183, width: 2500},
-        {id: 5, img: '/gallary/new/gallary5.jpg', imgZ: '/gallary/gallary5.jpg', height: 1183, width: 2500},
-        {id: 6, img: '/gallary/new/gallary6.jpg', imgZ: '/gallary/gallary6.jpg', height: 1183, width: 2500},
-        {id: 7, img: '/gallary/new/gallary7.jpg', imgZ: '/gallary/gallary7.jpg', height: 1055, width: 500},
-        {id: 8, img: '/gallary/new/gallary8.jpg', imgZ: '/gallary/gallary8.jpg', height: 1183, width: 2500},
-        {id: 9, img: '/gallary/new/gallary9.jpg', imgZ: '/gallary/gallary9.jpg', height: 1057, width: 500},
-        {id: 10, img: '/gallary/new/gallary10.jpg', imgZ: '/gallary/gallary10.jpg', height: 1183, width: 2500},
-        {id: 11, img: '/gallary/new/gallary11.jpg', imgZ: '/gallary/gallary11.jpg', height: 1057, width: 500},
-        {id: 12, img: '/gallary/new/gallary12.jpg', imgZ: '/gallary/gallary12.jpg', height: 1183, width: 2500},
-        {id: 13, img: '/gallary/new/gallary13.jpg', imgZ: '/gallary/gallary13.jpg', height: 1057, width: 500},
-        {id: 14, img: '/gallary/new/gallary14.jpg', imgZ: '/gallary/gallary14.jpg', height: 1183, width: 2500},
-        {id: 15, img: '/gallary/new/gallary15.jpg', imgZ: '/gallary/gallary15.jpg', height: 1185, width: 2500},
-        {id: 16, img: '/gallary/new/gallary16.jpg', imgZ: '/gallary/gallary16.jpg', height: 1183, width: 2500},
-        {id: 17, img: '/gallary/new/gallary17.jpg', imgZ: '/gallary/gallary17.jpg', height: 1183, width: 2500},
-        
-    ]
+    function openZDB(id) {
+        setopenZB(id);
+    }
+
+    function closeZDB() {
+        setopenZB(0);
+    }
 
     return (
         <div id="Gallary" >
@@ -115,15 +136,16 @@ export default function Gallary() {
                         marginTop: '60px',
                         borderRadius: '100px',
                     }}>
-                        <Typography variant="h2" color="primary" align="center" >UPHOLSTERY GALLARY</Typography>
+                        <Typography variant="h2" color="primary" align="center" >{catPage.title}</Typography>
                     </Grid>
                 </Grid>
             </Container>
             <br/>
             <br/>
-            {/* Gallery */}
+            {/* Carosel */}
             <Container sx={{
                 display: "flex",
+                flexDirection: 'column',
                 justifyContent: "center",
                 alignItems: 'center',
             }} >
@@ -148,17 +170,17 @@ export default function Gallary() {
                             <ArrowBackIosIcon/>
                         </Button>
                         <Carousel prevImg={prevImg} nextImg={nextImg} transform={`translateX(${carouselPos}%)`}>
-                            {gallaryData.map((data)=>(
+                            {catPage.picDir.map((data)=>(
                                 <CarouselItem key={data.id}  >
                                     <div sx={{position: 'relative'}} >
-                                        <Image 
-                                            src={data.img} 
-                                            onClick={()=>openZD(data.id)} 
-                                            width={carouselSize()} 
-                                            height={carouselSize()} 
-                                            style={{borderRadius: '10px'}} 
-                                            alt="Gallery Pic"
-                                        />
+                                        <Card sx={{ minWidth: `${carouselSize()}px`,}}>
+                                            <CardMedia
+                                                sx={{ height: `${carouselSize()}px`, }}
+                                                image={data.img}
+                                                onClick={()=>openZD(data.id)} 
+                                                alt=''
+                                            />
+                                        </Card>
                                     </div>
                                     <Dialog 
                                         onClose={closeZD} 
@@ -167,9 +189,9 @@ export default function Gallary() {
                                         fullScreen 
                                     >
                                         <Image 
-                                            src={data.imgZ} 
-                                            width={zoomSize(data.height,data.width)} 
-                                            height={zoomSize(data.height,data.width)*data.height/data.width} 
+                                            src={data.img} 
+                                            width={zoomSize2(data.height,data.width).width} 
+                                            height={zoomSize2(data.height,data.width).height} 
                                             alt="Gallery Zoom Pic"
                                             style={{
                                                 position: 'relative', 
@@ -178,7 +200,50 @@ export default function Gallary() {
                                                 transform: 'translate(-50%, -50%)',
                                             }}
                                         />
+                                        {('before' in data) ? (
+                                            <Button 
+                                                variant='contained'
+                                                onClick={()=>openZDB(data.before.id)} 
+                                                sx={{
+                                                    position: 'fixed',
+                                                    bottom: '5px',
+                                                    left: '50%',
+                                                    transform: 'translate(-50%, 0%)',
+
+                                            }}>Before</Button>
+                                        ):(<></>)}
                                     </Dialog>
+                                    {('before' in data) ? (
+                                        <Dialog 
+                                        onClose={closeZDB} 
+                                        onClick={closeZDB} 
+                                        open={(openZB==data.before.id)} 
+                                        fullScreen 
+                                    >
+                                        <Image 
+                                            src={data.before.img} 
+                                            width={zoomSize2(data.before.height,data.before.width).width} 
+                                            height={zoomSize2(data.before.height,data.before.width).height} 
+                                            alt="Gallery Before Pic"
+                                            style={{
+                                                position: 'relative', 
+                                                top: '50%', 
+                                                left: '50%', 
+                                                transform: 'translate(-50%, -50%)',
+                                            }}
+                                        />
+                                        <Button 
+                                            variant='contained'
+                                            onClick={()=>openZD(data.id)} 
+                                            sx={{
+                                                position: 'fixed',
+                                                bottom: '5px',
+                                                left: '50%',
+                                                transform: 'translate(-50%, 0%)',
+
+                                        }}>After</Button>
+                                    </Dialog>
+                                    ):(<></>)}
                                 </CarouselItem>
                             ))}
                         </Carousel>
@@ -189,7 +254,23 @@ export default function Gallary() {
                         }}>
                             <ArrowForwardIosIcon/>
                         </Button>
-                    </Grid>                    
+                    </Grid>   
+                    {catPage.picDir.map((pic, index) => (
+                        <Grid item xs={4} key={pic.id} sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: 'center',
+                        }}>
+                            <Card sx={{ minWidth: '100%',}}>
+                                <CardMedia
+                                    sx={{ height: {xs: 100, sm: 150, md: 220, lg: 300}, }}
+                                    image={pic.img}
+                                    onClick={()=>openZD(pic.id)} 
+                                    alt=''
+                                />
+                            </Card>
+                        </Grid>  
+                    ))} 
                 </Grid>
             </Container>
         </div>

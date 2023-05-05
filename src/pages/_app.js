@@ -9,6 +9,9 @@ let theme = createTheme({
     secondary: {
       main: '#C4B82C',
     },
+    secondary: {
+      main: '#C4B82C',
+    },
   },
   typography: {
     h1: {

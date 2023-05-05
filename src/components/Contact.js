@@ -29,6 +29,7 @@ export default function Contact() {
                     {/* Info */}
                     <Grid item xs={12} sm={8} md={7} lg={7} xl={7} sx={{
                         display: "flex",
+                        flexDirection: 'column',
                         justifyContent: "center",
                         alignItems: 'center',
                         backgroundColor: 'black',
@@ -36,13 +37,12 @@ export default function Contact() {
                         marginTop: '10px',
                         marginBottom: '60px',
                     }}>
+                        <Typography variant="h4" color="primary" align="center" >{`SEW POSH DESIGN & UPHOLSTERY`}</Typography>
                         <Typography variant="h5" color="white" align="center" >
                             <>
                             INFO@SEWPOSHDESIGN.COM
                             <br/>
-                            <br/>
                             561-600-8415
-                            <br/>
                             <br/>
                             <ButtonGroup sx={{
                                 zIndex: '99',

@@ -1,12 +1,7 @@
 import Head from 'next/head'
 import Home from '@/components/Home'
-import Gallary from '@/components/Gallary'
-import Reviews from '@/components/Reviews'
-import Appointment from '@/components/Appointment'
 import Nav from '@/components/Nav'
-import About from '@/components/About'
-import Contact from '@/components/Contact'
-import Script from 'next/script'
+import Footer from '@/components/Footer'
 
 
 export default function Site() {
@@ -30,13 +25,8 @@ export default function Site() {
         <div style={{backgroundImage: 'url("/wp-50.png")',}}>
           <Nav/>
           <Home/>
-          <Gallary/>
-          <Reviews/>
-          <About/>
-          <Appointment/>
-          <Contact/>
+          <Footer/>
         </div>
-        <Script src="https://apps.elfsight.com/p/platform.js" />
     </>
   )
 }

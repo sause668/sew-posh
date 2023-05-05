@@ -1,5 +1,6 @@
 import { Container, Grid, Typography, useMediaQuery, Card, CardMedia, CardContent, Button } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
     const mobile = useMediaQuery('(min-width:1000px)');
@@ -23,18 +24,13 @@ export default function Home() {
         return {height: height, width: width};
     }
 
-    function scroll(id) {
-        var elm = document.getElementById(id);
-        elm.scrollIntoView({behavior: "smooth"}); 
-    }
-
     const homeData = [
-        {id: 1, img: '/home-img/home11.jpg', title: 'DINING SETS', info: (<>It all begins with an idea. Maybe you want to refresh the cushions on your dining room set. Or perhaps you want a complete new look!<br/><br/>Sew Posh Design and Upholstery will walk you through your design choices from a simple fabric change to a full refinish, including painting, piping and much more!!</>)},
-        {id: 2, img: '/home-img/home22.jpg', title: 'OUTDOOR PILLOWS AND CUSHIONS', info: (<>Sew Posh Design and Upholstery has access to industry leading Sunbrella® Products.<br/><br/>Sunbrella® Products come with a wide selction of stainand mold resistant fabrics to make your outdoor project last a lifetime!</>)},
-        {id: 3, img: '/home-img/home33.jpg', title: 'REPAIRS', info: (<>Torn Pillow? Broken zipper? Soggy cushions? NO PROBLEM!!<br/><br/>Sew Posh Design and Upholstery is here to the rescue!<br/><br/>CALL NOW FOR ALL YOUR REPAIR NEEDS!</>)},
-        {id: 4, img: '/home-img/home44.jpg', title: 'SOFAS AND LOVE SEATS', info: (<>No Project is too big or small for Sew Posh Design and Upholstery!<br/><br/>From a Love seat to a sofa to a tufted ottoman, we are in your corner.</>)},
-        {id: 5, img: '/home-img/home55.jpg', title: 'HEADBOARDS', info: (<>Whether its a simple change or an elegant upgrade, Sew Posh Design and Upholstery can handle it.<br/><br/>nAsk about our tufting technique!</>)},
-        {id: 6, img: '/home-img/home66.jpg', title: 'BOAT UPHOLSTERY', info: (<>Sew Posh Design and Upholstery has a broad expertise from Land To Sea.<br/><br/>Ask about our Boat Upholstery!</>)},
+        {id: 1, img: '/home-img/home11.jpg', link: '/gallary/diningSets', title: 'DINING SETS', info: (<>It all begins with an idea. Maybe you want to refresh the cushions on your dining room set. Or perhaps you want a complete new look!<br/><br/>Sew Posh Design and Upholstery will walk you through your design choices from a simple fabric change to a full refinish, including painting, piping and much more!!</>)},
+        {id: 2, img: '/home-img/home22.jpg', link: '/gallary/cushions', title: 'OUTDOOR PILLOWS AND CUSHIONS', info: (<>Sew Posh Design and Upholstery has access to industry leading Sunbrella® Products.<br/><br/>Sunbrella® Products come with a wide selction of stainand mold resistant fabrics to make your outdoor project last a lifetime!</>)},
+        {id: 3, img: '/home-img/home33.jpg', link: '/gallary/furnitureRepairs', title: 'REPAIRS', info: (<>Torn Pillow? Broken zipper? Soggy cushions? NO PROBLEM!!<br/><br/>Sew Posh Design and Upholstery is here to the rescue!<br/><br/>CALL NOW FOR ALL YOUR REPAIR NEEDS!</>)},
+        {id: 4, img: '/home-img/home44.jpg', link: '/gallary/sofas', title: 'SOFAS AND LOVE SEATS', info: (<>No Project is too big or small for Sew Posh Design and Upholstery!<br/><br/>From a Love seat to a sofa to a tufted ottoman, we are in your corner.</>)},
+        {id: 5, img: '/home-img/home55.jpg', link: '/gallary/headBoards', title: 'HEADBOARDS', info: (<>Whether its a simple change or an elegant upgrade, Sew Posh Design and Upholstery can handle it.<br/><br/>nAsk about our tufting technique!</>)},
+        {id: 6, img: '/home-img/home66.jpg', link: '/gallary/boatUpholstery', title: 'BOAT UPHOLSTERY', info: (<>Sew Posh Design and Upholstery has a broad expertise from Land To Sea.<br/><br/>Ask about our Boat Upholstery!</>)},
     ]
 
     return (
@@ -92,7 +88,11 @@ export default function Home() {
                         justifyContent: "center",
                         alignItems: 'center',
                     }} >
-                <Button variant="contained" onClick={()=>scroll('Appointment')} ><Typography variant="h6"  >Book Now!</Typography></Button>
+                <Button 
+                    variant="contained"  
+                    component={Link}
+                    href='https://sewposh-upholstery.squarespace.com/book-now'
+                ><Typography variant="h6"  >Book Now!</Typography></Button>
             </Container>
             {/* Uphostery Info Title */}
             <Container sx={{
@@ -148,6 +148,8 @@ export default function Home() {
                                 <CardMedia
                                     sx={{ height: 270, }}
                                     image={data.img}
+                                    component={Link}
+                                    href={data.link}
                                     title={data.title}
                                     alt='Sew Posh Info'
                                 />

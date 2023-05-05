@@ -1,25 +1,21 @@
 import { ButtonGroup, IconButton, Tooltip, useMediaQuery, Menu, MenuItem, MenuList } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HomeIcon from '@mui/icons-material/Home';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import InfoIcon from '@mui/icons-material/Info';
-import CallIcon from '@mui/icons-material/Call';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MenuIcon from '@mui/icons-material/Menu';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Nav() {
     const mobile = useMediaQuery('(min-width:1000px)');
-    const [section, setSection] = useState('Home');
+    const router = useRouter()
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-
-    function scroll(id) {
-        var elm = document.getElementById(id);
-        elm.scrollIntoView({behavior: "smooth"}); 
-    }
     
     const handleMenuClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -27,39 +23,6 @@ export default function Nav() {
     const handleMenuClose = () => {
       setAnchorEl(null);
     };
-
-    useEffect(() => {
-        const handleScroll = (event) => {
-            var home = document.getElementById('Home');
-            var gallary = document.getElementById('Gallary');
-            var reviews = document.getElementById('Reviews');
-            var about = document.getElementById('About');
-            var appointment = document.getElementById('Appointment');
-            var contact = document.getElementById('Contact');
-            let scroll = window.scrollY + window.innerHeight*.3;
-
-            if (home.offsetTop < scroll && scroll < gallary.offsetTop) {
-                setSection('Home');
-            }else if (gallary.offsetTop < scroll && scroll<reviews.offsetTop) {
-                setSection('Gallary');
-            }else if (reviews.offsetTop < scroll && scroll<about.offsetTop) {
-                setSection('Reviews');
-            }else if (about.offsetTop < scroll && scroll<appointment.offsetTop) {
-                setSection('About');
-            }else if (appointment.offsetTop < scroll && scroll<contact.offsetTop-200) {
-                setSection('Appointment');
-            }else if (contact.offsetTop-200 < scroll) {
-                setSection('Contact');
-            }
-        
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
     
     return (
         <div  >
@@ -98,37 +61,46 @@ export default function Nav() {
                     }
                   }}
             >
-                <MenuItem onClick={()=>scroll('Home')} selected={(section=="Home") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/'
+                >
                     <HomeIcon/>
                     Profile
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('Gallary')} selected={(section=="Gallary") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/gallary'
+                >
                     <CollectionsIcon/>
                     Gallary
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('Reviews')} selected={(section=="Reviews") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/reviews'
+                >
                     <ReviewsIcon/>
                     Reviews
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('About')} selected={(section=="About") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/about'
+                >
                     <InfoIcon/>
                     About
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('Appointment')} selected={(section=="Appointment") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='https://sewposh-upholstery.squarespace.com/book-now'
+                >
                     <CalendarMonthIcon/>
                     Appointment
-                </MenuItem>
-                <MenuItem onClick={()=>scroll('Contact')} selected={(section=="Contact") ? true : false}>
-                    <CallIcon/>
-                    Contact
                 </MenuItem>
             </Menu>
             {/* Mobile Links */}
             <ButtonGroup sx={{
                     position: 'fixed',
                     right: '0px',
-                    // right: menu ? '0px':'-300px',
-                    // transition: 'right 0.3s',
                     zIndex: '98',
             }}>
                 <div style={{
@@ -188,34 +160,49 @@ export default function Nav() {
                         opacity: '.8',
                         borderRadius: '7px'
                      }}/>
-                <MenuItem onClick={()=>scroll('Home')} selected={(section=="Home") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/'
+                    selected={(router.asPath == '/') ? true : false}
+                >
                     <Tooltip placement="right" title='Home'>
                        <HomeIcon/>
                     </Tooltip>
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('Gallary')} selected={(section=="Gallary") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/gallary'
+                    selected={(router.asPath == '/gallary') ? true : false}
+                >
                     <Tooltip placement="right" title='Gallary'>
                         <CollectionsIcon/>
                     </Tooltip>
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('Reviews')}selected={(section=="Reviews") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/reviews'
+                    selected={(router.asPath == '/reviews') ? true : false}
+                >
                     <Tooltip placement="right" title='Reviews'>
                         <ReviewsIcon/>
                     </Tooltip>
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('About')}selected={(section=="About") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='/about'
+                    selected={(router.asPath == '/about') ? true : false}
+                >
                     <Tooltip placement="right" title='About'>
                         <InfoIcon/>
                     </Tooltip>
                 </MenuItem>
-                <MenuItem onClick={()=>scroll('Appointment')}selected={(section=="Appointment") ? true : false}>
+                <MenuItem 
+                    component={Link}  
+                    href='https://sewposh-upholstery.squarespace.com/book-now'
+                    selected={(router.asPath == '/appointment') ? true : false}
+                >
                     <Tooltip placement="right" title='Appointment'>
                         <CalendarMonthIcon/>
-                    </Tooltip>
-                </MenuItem>
-                <MenuItem onClick={()=>scroll('Contact')}selected={(section=="Contact") ? true : false}>
-                    <Tooltip placement="right" title='Contact'>
-                        <CallIcon/>
                     </Tooltip>
                 </MenuItem>
             </MenuList>
