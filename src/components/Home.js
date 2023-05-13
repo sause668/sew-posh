@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, useMediaQuery, Card, CardMedia, CardContent, Button } from "@mui/material";
+import { Container, Grid, Typography, useMediaQuery, Card, CardMedia, CardContent, Button, Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,8 +39,10 @@ export default function Home() {
             <Container sx={{
                 display: "flex",
                 justifyContent: "center",
+                flexDirection: 'column',
                 alignItems: 'center',
             }} >
+                
                 <Grid 
                     container 
                     spacing={2} 
@@ -51,13 +53,16 @@ export default function Home() {
                     }}
                 >
                     <Grid item xs={12} sx={{
-                        marginTop: '50px',
+                        marginTop: '25px',
                         marginBottom: '20px',
                         display: "flex",
+                        flexDirection: 'column',
                         justifyContent: "center",
                         alignItems: 'center',
                     }}>
+                        
                         <Image src='/sew-posh2.png' width={logoSize().width} height={logoSize().height} alt="Sew Posh Logo"/>
+                        
                     </Grid>
                     <Grid item xs={12} sm={12} md={10} lg={9} xl={8} sx={{
                         display: "flex",
@@ -82,12 +87,32 @@ export default function Home() {
                 </Grid>
             </Container>
             <br/>
+            {/* Reopening */}
+            <Container sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: 'center',
+            }} >
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: 'column',
+                    justifyContent: "center",
+                    alignItems: 'center',
+                    backgroundColor: 'black',
+                    borderRadius: '5px',
+                }}>
+                    <Typography variant="h4" color="secondary" align="center" >Relocating and Reopening June 1st</Typography>
+                    <Typography variant="h5" color="secondary" align="center" >Still taking requests!  Submit here:</Typography>
+                </Box>
+            </Container>
+            
+            <br/>
             {/* Book Now Button */}
             <Container sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: 'center',
-                    }} >
+                display: "flex",
+                justifyContent: "center",
+                alignItems: 'center',
+            }} >
                 <Button 
                     variant="contained"  
                     component={Link}

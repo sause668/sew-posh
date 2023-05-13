@@ -760,42 +760,42 @@ export const gallaryDir = [
         title: 'Cushions',
         dis: '',
         picDir: [
-            {
-                id: 11,
-                img: '/gallery/7-cushions/1-1.jpg',
-                height: 1000,
-                width: 673,
-                before: {
-                    id: 11,
-                    img: '/gallery/7-cushions/1-1b.jpg',
-                    height: 1000,
-                    width: 673,
-                }
-            },
-            {
-                id: 21,
-                img: '/gallery/7-cushions/2-1.jpg',
-                height: 726,
-                width: 1500,
-            },
-            {
-                id: 22,
-                img: '/gallery/7-cushions/2-2.jpg',
-                height: 1200,
-                width: 788,
-            },
-            {
-                id: 23,
-                img: '/gallery/7-cushions/2-3.jpg',
-                height: 990,
-                width: 1300,
-            },
-            {
-                id: 24,
-                img: '/gallery/7-cushions/2-4.jpg',
-                height: 860,
-                width: 1300,
-            },
+            // {
+            //     id: 11,
+            //     img: '/gallery/7-cushions/1-1.jpg',
+            //     height: 1000,
+            //     width: 673,
+            //     before: {
+            //         id: 11,
+            //         img: '/gallery/7-cushions/1-1b.jpg',
+            //         height: 1000,
+            //         width: 673,
+            //     }
+            // },
+            // {
+            //     id: 21,
+            //     img: '/gallery/7-cushions/2-1.jpg',
+            //     height: 726,
+            //     width: 1500,
+            // },
+            // {
+            //     id: 22,
+            //     img: '/gallery/7-cushions/2-2.jpg',
+            //     height: 1200,
+            //     width: 788,
+            // },
+            // {
+            //     id: 23,
+            //     img: '/gallery/7-cushions/2-3.jpg',
+            //     height: 990,
+            //     width: 1300,
+            // },
+            // {
+            //     id: 24,
+            //     img: '/gallery/7-cushions/2-4.jpg',
+            //     height: 860,
+            //     width: 1300,
+            // },
             {
                 id: 31,
                 img: '/gallery/7-cushions/3-1.jpg',
