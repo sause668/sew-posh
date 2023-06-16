@@ -88,7 +88,7 @@ export default function Home() {
             </Container>
             <br/>
             {/* Reopening */}
-            <Container sx={{
+            {/* <Container sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: 'center',
@@ -106,7 +106,7 @@ export default function Home() {
                 </Box>
             </Container>
             
-            <br/>
+            <br/> */}
             {/* Book Now Button */}
             <Container sx={{
                 display: "flex",
