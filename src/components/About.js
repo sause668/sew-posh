@@ -85,13 +85,30 @@ export default function About() {
                         <Typography variant="h4" color="primary" align="center" >MEET ARI</Typography>
                         <Typography variant="h5" color="secondary" align="center" >FOUNDER OF SEWPOSH DESIGN AND UPHOLSTERY</Typography>
                         <br/>
-                        <br/>
                         <Typography variant="h6" color="white" align="center" >
-                            <div>
+                            {/* <div>
                                 SEAMSTRESS FROM THE AGE OF 3, ARI HAS TURNED HER TALENT INTO A SERVICE THAT DOES NOT START WITH JUST A QUOTE.
                                 <br/>
                                 <br/>
                                 THE SEW POSH EXPERIENCE INVOLVES YOU EVERY STEP OF THE WAY FROM COLOR CHOICES, TO FABRIC CHOICES, YOU WILL NEVER BE LEFT IN THE DARK.
+                            </div> */}
+                            {/* <div>
+                                ARI’S PASSION FOR THE ARTISTIC WORLD CAN BE TRACED BACK TO THE AGE OF 3, WHEN SHE FIRST BECAME ENAMORED WITH THE WORK OF SEAMSTRESSES. HER LOVE FOR THE CRAFT ONLY FLOURISHED WITH AGE AND WOULD GROW TO INCLUDE ASPECTS OF DESIGN AND REPAIR. 
+                                <br/>
+                                <br/>
+                                NOW AN ACCOMPLISHED SEAMSTRESS AND UPHOLSTERER, ARI HAS WORKED ALONGSIDE CREATIVES FROM BOTH FIELDS, HAVING RESTORED COUNTLESS PIECES OF FURNITURE AND EVEN PRODUCING A LINE OF GARMENTS FOR A RUNWAY. 
+                                <br/>
+                                <br/>
+                                FOR ARI, IT IS NOT JUST ABOUT A QUOTE: SHE PRIDES HERSELF ON PROVIDING HER CLIENTS WITH A COLLABORATIVE EXPERIENCE EVERY STEP OF THE WAY. FROM COLOR SAMPLES TO FABRIC CHOICES, YOU WILL NEVER BE LEFT IN THE DARK AT SEW POSH DESIGN AND UPHOLSTERY.
+                            </div> */}
+                            <div>
+                                Ari’s passion for the artistic world can be traced back to the age of 3, when she first became enamored with the work of seamstresses. Her love for the craft only flourished with age and would grow to include aspects of design and repair.
+                                <br/>
+                                <br/>
+                                Now an accomplished seamstress and upholsterer, Ari has worked alongside creatives from both fields, having restored countless pieces of furniture and even producing a line of garments for a runway. 
+                                <br/>
+                                <br/>
+                                For Ari, it is not just about a quote: she prides herself on providing her clients with a collaborative experience every step of the way. From color samples to fabric choices, you will never be left in the dark at sew posh design and upholstery.
                             </div>
                         </Typography>
                     </Grid>                 
