@@ -73,7 +73,7 @@ export default function Nav() {
                     href='/gallary'
                 >
                     <CollectionsIcon/>
-                    Gallary
+                    Gallery
                 </MenuItem>
                 <MenuItem 
                     component={Link}  
