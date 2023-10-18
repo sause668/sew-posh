@@ -1,6 +1,8 @@
+import { featured } from "@/lib/featured";
 import { Container, Grid, Typography, useMediaQuery, Card, CardMedia, CardContent, Button, Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import FeaturedGallary from "./FeaturedGallary";
 
 export default function Home() {
     const mobile = useMediaQuery('(min-width:1000px)');
@@ -82,7 +84,7 @@ export default function Home() {
                         opacity: '.97',
                         borderRadius: '100px',
                     }}>
-                            <Typography variant="h1" color="primary" align="center" >POOR TO POOSH!</Typography>
+                            <Typography variant="h1" color="primary" align="center" >POOR TO POSH!</Typography>
                     </Grid>
                 </Grid>
             </Container>
@@ -119,6 +121,8 @@ export default function Home() {
                     href='https://sewposh-upholstery.squarespace.com/book-now'
                 ><Typography variant="h6"  >Book Now!</Typography></Button>
             </Container>
+            {/* Featured Project */}
+            <FeaturedGallary catPage={featured} />
             {/* Uphostery Info Title */}
             <Container sx={{
                 display: "flex",

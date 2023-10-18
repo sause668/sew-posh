@@ -174,7 +174,7 @@ export default function Nav() {
                     href='/gallary'
                     selected={(router.asPath == '/gallary') ? true : false}
                 >
-                    <Tooltip placement="right" title='Gallary'>
+                    <Tooltip placement="right" title='Gallery'>
                         <CollectionsIcon/>
                     </Tooltip>
                 </MenuItem>
