@@ -10,7 +10,7 @@ export default function Footer() {
         {id: 'gallary', title: 'Gallery', link: '/gallary'},
         {id: 'reviews', title: 'Reviews', link: '/reviews'},
         {id: 'about', title: 'About', link: '/about'},
-        {id: 'appointment', title: 'Book Now', link: 'https://sewposh-upholstery.squarespace.com/book-now'},
+        // {id: 'appointment', title: 'Book Now', link: 'https://sewposh-upholstery.squarespace.com/book-now'},
     ]
 
     return (

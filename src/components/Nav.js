@@ -89,13 +89,13 @@ export default function Nav() {
                     <InfoIcon/>
                     About
                 </MenuItem>
-                <MenuItem 
+                {/* <MenuItem 
                     component={Link}  
                     href='https://sewposh-upholstery.squarespace.com/book-now'
                 >
                     <CalendarMonthIcon/>
                     Appointment
-                </MenuItem>
+                </MenuItem> */}
             </Menu>
             {/* Mobile Links */}
             <ButtonGroup sx={{
@@ -196,7 +196,7 @@ export default function Nav() {
                         <InfoIcon/>
                     </Tooltip>
                 </MenuItem>
-                <MenuItem 
+                {/* <MenuItem 
                     component={Link}  
                     href='https://sewposh-upholstery.squarespace.com/book-now'
                     selected={(router.asPath == '/appointment') ? true : false}
@@ -204,7 +204,7 @@ export default function Nav() {
                     <Tooltip placement="right" title='Appointment'>
                         <CalendarMonthIcon/>
                     </Tooltip>
-                </MenuItem>
+                </MenuItem> */}
             </MenuList>
             </div>)}
         </div>

@@ -110,7 +110,7 @@ export default function Home() {
             
             <br/> */}
             {/* Book Now Button */}
-            <Container sx={{
+            {/* <Container sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: 'center',
@@ -120,7 +120,7 @@ export default function Home() {
                     component={Link}
                     href='https://sewposh-upholstery.squarespace.com/book-now'
                 ><Typography variant="h6"  >Book Now!</Typography></Button>
-            </Container>
+            </Container> */}
             {/* Featured Project */}
             <FeaturedGallary catPage={featured} />
             {/* Uphostery Info Title */}
